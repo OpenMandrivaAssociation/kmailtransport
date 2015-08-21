@@ -19,6 +19,7 @@ Group: System/Libraries
 BuildRequires: cmake
 BuildRequires: ninja
 BuildRequires: cmake(ECM)
+BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5AkonadiMime)
 BuildRequires: cmake(KF5Completion)

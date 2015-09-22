@@ -1,2 +1,4 @@
+removed_sources:
+  kmailtransport-15.08.0.tar.xz: bcba511e706e1e1f88f1d05001a8267473067fbb
 sources:
-  "kmailtransport-15.08.0.tar.xz": bcba511e706e1e1f88f1d05001a8267473067fbb
+  kmailtransport-15.08.1.tar.xz: ad3cb342a65d9567df57084428d427a70e8c87d0

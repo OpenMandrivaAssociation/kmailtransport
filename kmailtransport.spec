@@ -3,21 +3,19 @@
 %define devname %mklibname KF5MailTransport -d
 
 Name: kmailtransport
-Version:	16.08.2
+Version: 16.08.2
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	1
+Release: 1
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for mail transport
 URL: http://kde.org/
 License: GPL
-Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: ninja
+Group: Graphical desktop/KDE
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: cmake(KF5Akonadi)
@@ -38,7 +36,8 @@ BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
-Conflicts:	kdepimlibs4-core < 4.14.10-6
+BuildRequires: boost-devel
+Conflicts: kdepimlibs4-core < 4.14.10-6
 
 %description
 KDE library for mail transport.

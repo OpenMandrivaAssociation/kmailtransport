@@ -37,6 +37,7 @@ BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
 BuildRequires: boost-devel
+BuildRequires: sasl-devel
 Conflicts: kdepimlibs4-core < 4.14.10-6
 
 %description

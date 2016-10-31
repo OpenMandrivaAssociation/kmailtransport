@@ -70,9 +70,13 @@ Development files (Headers etc.) for %{name}.
 %ninja_install -C build
 
 %files
+%doc %{_docdir}/HTML/en/kioslave5/smtp/index.*
+%{_sysconfdir}/xdg/kmailtransport.categories
+%{_libdir}/qt5/plugins/kf5/kio/smtp.so
 %{_libdir}/qt5/plugins/kcm_mailtransport.so
 %{_datadir}/config.kcfg/*
 %{_datadir}/kservices5/kcm_mailtransport.desktop
+%{_datadir}/kservices5/*.protocol
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*

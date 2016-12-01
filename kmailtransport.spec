@@ -39,9 +39,9 @@ BuildRequires: cmake(Qt5Test)
 BuildRequires: boost-devel
 BuildRequires: sasl-devel
 Conflicts: kdepimlibs4-core < 4.14.10-6
-Conflicts: kio-smtp <= 16.04.3-2
-Obsoletes: kio-smtp < %{EVRD}
-Provides: kio-smtp = %{EVRD}
+Conflicts: kio-smtp < 3:16.04.3-2
+Obsoletes: kio-smtp < 3:16.04.3-2
+Provides: kio-smtp = 3:16.04.3-2
 
 %description
 KDE library for mail transport.

@@ -3,7 +3,7 @@
 %define devname %mklibname KF5MailTransport -d
 
 Name: kmailtransport
-Version: 17.04.3
+Version: 17.07.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -72,30 +72,17 @@ Development files (Headers etc.) for %{name}.
 
 %install
 %ninja_install -C build
-%find_lang libmailtransport5
-%find_lang kio_smtp
-cat *.lang >%{name}.lang
+%find_lang %{name} --all-name --with-html
 
 %files -f %{name}.lang
-%doc %{_docdir}/HTML/en/kioslave5/smtp/index.*
 %{_sysconfdir}/xdg/kmailtransport.categories
 %{_sysconfdir}/xdg/kmailtransport.renamecategories
 %{_libdir}/qt5/plugins/kf5/kio/smtp.so
 %{_libdir}/qt5/plugins/kcm_mailtransport.so
+%{_libdir}/qt5/plugins/mailtransport
 %{_datadir}/config.kcfg/*
 %{_datadir}/kservices5/kcm_mailtransport.desktop
 %{_datadir}/kservices5/*.protocol
-%lang(ca) %{_docdir}/HTML/ca/kioslave5/smtp
-%lang(de) %{_docdir}/HTML/de/kioslave5/smtp
-%lang(es) %{_docdir}/HTML/es/kioslave5/smtp
-%lang(et) %{_docdir}/HTML/et/kioslave5/smtp
-%lang(it) %{_docdir}/HTML/it/kioslave5/smtp
-%lang(nl) %{_docdir}/HTML/nl/kioslave5/smtp
-%lang(pt_BR) %{_docdir}/HTML/pt_BR/kioslave5/smtp
-%lang(ru) %{_docdir}/HTML/ru/kioslave5/smtp
-%lang(sr) %{_docdir}/HTML/sr/kioslave5/smtp
-%lang(sv) %{_docdir}/HTML/sv/kioslave5/smtp
-%lang(uk) %{_docdir}/HTML/uk/kioslave5/smtp
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*

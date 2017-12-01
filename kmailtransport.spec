@@ -3,7 +3,7 @@
 %define devname %mklibname KF5MailTransport -d
 
 Name: kmailtransport
-Version: 17.08.1
+Version: 17.11.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -30,6 +30,7 @@ BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5Mime)
 BuildRequires: cmake(KF5Wallet)
 BuildRequires: cmake(KF5WidgetsAddons)
+BuildRequires: cmake(KPimSMTP)
 BuildRequires: cmake(Qt5Core)
 BuildRequires: cmake(Qt5DBus)
 BuildRequires: cmake(Qt5Gui)
@@ -77,12 +78,10 @@ Development files (Headers etc.) for %{name}.
 %files -f %{name}.lang
 %{_sysconfdir}/xdg/kmailtransport.categories
 %{_sysconfdir}/xdg/kmailtransport.renamecategories
-%{_libdir}/qt5/plugins/kf5/kio/smtp.so
 %{_libdir}/qt5/plugins/kcm_mailtransport.so
 %{_libdir}/qt5/plugins/mailtransport
 %{_datadir}/config.kcfg/*
 %{_datadir}/kservices5/kcm_mailtransport.desktop
-%{_datadir}/kservices5/*.protocol
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*

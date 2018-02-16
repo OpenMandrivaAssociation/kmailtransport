@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kmailtransport-17.12.1.tar.xz: b1cd0784ec3d37cacd88760d91f8869f9acd807f
+sources:
+  kmailtransport-17.12.2.tar.xz: 9dedf1b302282b2d880ea5e33b879f18898041c5

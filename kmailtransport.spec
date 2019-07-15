@@ -3,14 +3,14 @@
 %define devname %mklibname KF5MailTransport -d
 
 Name: kmailtransport
-Version:  19.04.2
+Version:	19.04.3
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release: 1
+Release:	1
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for mail transport
 URL: http://kde.org/

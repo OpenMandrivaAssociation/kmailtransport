@@ -38,6 +38,7 @@ BuildRequires: cmake(Qt5Gui)
 BuildRequires: cmake(Qt5Network)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Qt5Test)
+BuildRequires: cmake(Qt5Keychain)
 BuildRequires: boost-devel
 BuildRequires: sasl-devel
 Requires: akonadi-contacts

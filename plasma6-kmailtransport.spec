@@ -20,7 +20,7 @@ Source0:	https://invent.kde.org/pim/kmailtransport/-/archive/%{gitbranch}/kmailt
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/kmailtransport-%{version}.tar.xz
 %endif
 Summary: KDE library for mail transport
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake(ECM)

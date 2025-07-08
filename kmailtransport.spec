@@ -5,8 +5,8 @@
 %define libname %mklibname KPim6MailTransport
 %define devname %mklibname KPim6MailTransport -d
 
-Name: plasma6-kmailtransport
-Version:	25.04.0
+Name: kmailtransport
+Version:	25.04.3
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -52,6 +52,9 @@ Requires: plasma6-akonadi-contacts
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
+BuildSystem: cmake
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%rename plasma6-kmailtransport
 
 %description
 KDE library for mail transport.
@@ -71,19 +74,6 @@ Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
-
-%prep
-%autosetup -p1 -n kmailtransport-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang %{name} --all-name --with-html
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kmailtransport.categories

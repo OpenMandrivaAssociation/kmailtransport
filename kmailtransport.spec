@@ -48,7 +48,7 @@ BuildRequires: cmake(Qt6Test)
 BuildRequires: cmake(Qt6Keychain)
 BuildRequires: boost-devel
 BuildRequires: sasl-devel
-Requires: plasma6-akonadi-contacts
+Requires: akonadi-contacts
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
